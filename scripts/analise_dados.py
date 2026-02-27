@@ -9,16 +9,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
 import sys
-import io
-
-# Configurar encoding do console para UTF-8 (somente Windows)
-try:
-    # Tentar configurar encoding apenas se estiver em ambiente local (Windows)
-    if hasattr(sys.stdout, 'buffer'):
-        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-except (AttributeError, ValueError):
-    # No Streamlit Cloud ou ambientes sem buffer, ignorar
-    pass
 
 # Configurar estilo dos gráficos
 sns.set_style("whitegrid")
@@ -244,11 +234,13 @@ class AnaliseBancoDados:
 def main():
     """Função principal"""
     # Buscar arquivo ClientesBanco.csv em locais padrão
+    # Como está em scripts/, buscar no diretório pai
     caminhos_possiveis = [
+        Path("../ClientesBanco.csv"),
         Path("ClientesBanco.csv"),
-        Path("data/ClientesBanco.csv"),
+        Path("../data/ClientesBanco.csv"),
         Path("data") / "ClientesBanco.csv",
-        Path("..") / "ClientesBanco.csv"
+        Path("..") / ".." / "ClientesBanco.csv"
     ]
     
     caminho = None

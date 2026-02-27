@@ -117,9 +117,13 @@ O dashboard abrirá automaticamente em `http://localhost:8501`
 ## 📂 Estrutura do Projeto
 
 ```
-├── app_streamlit.py          # Dashboard principal Streamlit
-├── analise_dados.py          # Script de análise exploratória
+├── streamlit_app.py          # Ponto de entrada Streamlit Cloud
+├── app_universal.py          # Analisador universal CSV
+├── app_streamlit.py          # Dashboard bancário
+├── scripts/
+│   └── analise_dados.py      # Script de análise (terminal)
 ├── requirements.txt          # Dependências Python
+├── runtime.txt               # Versão Python (3.11)
 ├── .streamlit/
 │   └── config.toml          # Configuração visual do Streamlit
 ├── .agents/
@@ -143,7 +147,7 @@ O dashboard abrirá automaticamente em `http://localhost:8501`
 1. Execute o script de análise em terminal:
 
    ```bash
-   python analise_dados.py
+   python scripts/analise_dados.py
    ```
 
 2. Ou execute o dashboard interativo:
