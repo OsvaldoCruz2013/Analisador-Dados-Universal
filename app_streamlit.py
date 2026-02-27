@@ -12,6 +12,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import os
+import io
 
 # Configuração da página
 st.set_page_config(
@@ -40,10 +41,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 @st.cache_data
-def carregar_dados(caminho=None, arquivo_upload=None):
+def carregar_dados(caminho=None, arquivo_bytes=None):
     """Carrega e processa os dados"""
-    if arquivo_upload is not None:
-        df = pd.read_csv(arquivo_upload, encoding='latin-1')
+    if arquivo_bytes is not None:
+        # Usar BytesIO para criar um novo objeto de arquivo a partir dos bytes
+        df = pd.read_csv(io.BytesIO(arquivo_bytes), encoding='latin-1')
     elif caminho:
         df = pd.read_csv(caminho, encoding='latin-1')
     else:
@@ -100,7 +102,9 @@ def main():
         
         if arquivo_upload is not None:
             try:
-                df = carregar_dados(arquivo_upload=arquivo_upload)
+                # Ler o conteúdo do arquivo como bytes para evitar erro "I/O operation on closed file"
+                arquivo_bytes = arquivo_upload.read()
+                df = carregar_dados(arquivo_bytes=arquivo_bytes)
                 st.sidebar.success(f"✅ {len(df)} registros carregados")
             except Exception as e:
                 st.sidebar.error(f"❌ Erro ao carregar arquivo: {e}")

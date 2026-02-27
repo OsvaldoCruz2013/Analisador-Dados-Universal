@@ -9,6 +9,7 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+import io
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -38,18 +39,20 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 @st.cache_data
-def carregar_dados(arquivo_upload=None, caminho=None):
+def carregar_dados(arquivo_bytes=None, caminho=None):
     """Carrega dados de arquivo CSV"""
     try:
-        if arquivo_upload is not None:
-            df = pd.read_csv(arquivo_upload, encoding='utf-8')
+        if arquivo_bytes is not None:
+            # Usar BytesIO para criar um novo objeto de arquivo a partir dos bytes
+            df = pd.read_csv(io.BytesIO(arquivo_bytes), encoding='utf-8')
         elif caminho:
             df = pd.read_csv(caminho, encoding='utf-8')
         else:
             return None
     except UnicodeDecodeError:
-        if arquivo_upload is not None:
-            df = pd.read_csv(arquivo_upload, encoding='latin-1')
+        if arquivo_bytes is not None:
+            # Tentar novamente com encoding latin-1
+            df = pd.read_csv(io.BytesIO(arquivo_bytes), encoding='latin-1')
         else:
             df = pd.read_csv(caminho, encoding='latin-1')
     
@@ -480,7 +483,9 @@ def main():
     
     # Carregar dados
     try:
-        df = carregar_dados(arquivo_upload=arquivo_upload)
+        # Ler o conteúdo do arquivo como bytes para evitar erro "I/O operation on closed file"
+        arquivo_bytes = arquivo_upload.read()
+        df = carregar_dados(arquivo_bytes=arquivo_bytes)
         st.sidebar.success(f"✅ {len(df):,} registros carregados")
         st.sidebar.markdown(f"**Colunas:** {len(df.columns)}")
     except Exception as e:
