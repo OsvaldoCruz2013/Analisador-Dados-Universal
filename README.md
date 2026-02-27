@@ -1,7 +1,7 @@
 # 📊 Analisador Universal de Dados CSV
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io)
-[![GitHub](https://img.shields.io/badge/GitHub-OsvaldoCruz2013-181717?logo=github)](https://github.com/OsvaldoCruz2013/analisador-dados-universal)
+[![GitHub](https://img.shields.io/badge/GitHub-OsvaldoCruz2013-181717?logo=github)](https://github.com/OsvaldoCruz2013/Analisador-Dados-Universal)
 ![Python](https://img.shields.io/badge/Python-3.14+-blue.svg)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.31.0-red.svg)
 ![Pandas](https://img.shields.io/badge/Pandas-2.2.0-green.svg)
