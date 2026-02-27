@@ -1,12 +1,13 @@
-# Dashboard de Análise de Dados 📊
+# 📊 Analisador Universal de Dados CSV
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io)
-
-Sistema completo de análise de dados desenvolvido com Python, Pandas e Streamlit. **Duas versões disponíveis**: análise bancária específica e analisador universal para qualquer CSV.
-
-![Dashboard Preview](https://img.shields.io/badge/Python-3.14+-blue.svg)
+[![GitHub](https://img.shields.io/badge/GitHub-OsvaldoCruz2013-181717?logo=github)](https://github.com/OsvaldoCruz2013/analisador-dados-universal)
+![Python](https://img.shields.io/badge/Python-3.14+-blue.svg)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.31.0-red.svg)
 ![Pandas](https://img.shields.io/badge/Pandas-2.2.0-green.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+
+Dashboard interativo para análise de dados desenvolvido com Python, Pandas e Streamlit. **Duas versões disponíveis**: analisador universal genérico para qualquer CSV e análise bancária especializada.
 
 ---
 
