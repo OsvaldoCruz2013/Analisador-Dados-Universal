@@ -11,6 +11,7 @@ import seaborn as sns
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+import os
 
 # Configuração da página
 st.set_page_config(
@@ -121,7 +122,25 @@ def main():
             st.stop()
     
     else:  # Caminho Local
-        caminho_padrao = r"D:\PYTHON\curso_hashtag\materiais\ClientesBanco.csv"
+        # Buscar arquivo ClientesBanco.csv em locais padrão
+        caminhos_possiveis = [
+            "ClientesBanco.csv",
+            "data/ClientesBanco.csv",
+            os.path.join("data", "ClientesBanco.csv"),
+            "../ClientesBanco.csv"
+        ]
+        
+        caminho_encontrado = None
+        for caminho in caminhos_possiveis:
+            if os.path.exists(caminho):
+                caminho_encontrado = caminho
+                break
+        
+        if caminho_encontrado:
+            caminho_padrao = caminho_encontrado
+        else:
+            caminho_padrao = "ClientesBanco.csv"
+        
         caminho_arquivo = st.sidebar.text_input("📂 Caminho do arquivo CSV:", value=caminho_padrao)
         
         try:
@@ -130,6 +149,7 @@ def main():
         except Exception as e:
             st.sidebar.error(f"❌ Erro ao carregar arquivo: {e}")
             st.error(f"Não foi possível carregar o arquivo: {caminho_arquivo}")
+            st.info("💡 Dica: Coloque o arquivo ClientesBanco.csv na raiz do projeto ou na pasta data/")
             st.stop()
     
     # Filtros na sidebar

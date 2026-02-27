@@ -237,8 +237,25 @@ class AnaliseBancoDados:
 
 def main():
     """Função principal"""
-    # Caminho do arquivo
-    caminho = r"D:\PYTHON\curso_hashtag\materiais\ClientesBanco.csv"
+    # Buscar arquivo ClientesBanco.csv em locais padrão
+    caminhos_possiveis = [
+        Path("ClientesBanco.csv"),
+        Path("data/ClientesBanco.csv"),
+        Path("data") / "ClientesBanco.csv",
+        Path("..") / "ClientesBanco.csv"
+    ]
+    
+    caminho = None
+    for caminho_teste in caminhos_possiveis:
+        if caminho_teste.exists():
+            caminho = str(caminho_teste)
+            print(f"[OK] Arquivo encontrado: {caminho}")
+            break
+    
+    if not caminho:
+        print("[ERRO] Arquivo ClientesBanco.csv não encontrado!")
+        print("Coloque o arquivo na raiz do projeto ou na pasta data/")
+        sys.exit(1)
     
     # Criar instância da análise
     analise = AnaliseBancoDados(caminho)
