@@ -554,5 +554,5 @@ def main():
         insights_automaticos(df_filtrado, tipos)
 
 
-if __name__ == "__main__":
-    main()
+# Executar o dashboard
+main()
