@@ -11,8 +11,14 @@ from pathlib import Path
 import sys
 import io
 
-# Configurar encoding do console para UTF-8
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+# Configurar encoding do console para UTF-8 (somente Windows)
+try:
+    # Tentar configurar encoding apenas se estiver em ambiente local (Windows)
+    if hasattr(sys.stdout, 'buffer'):
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+except (AttributeError, ValueError):
+    # No Streamlit Cloud ou ambientes sem buffer, ignorar
+    pass
 
 # Configurar estilo dos gráficos
 sns.set_style("whitegrid")
