@@ -37,7 +37,7 @@ Dashboard interativo para análise de dados desenvolvido com Python, Pandas e St
 
 ## 🚀 Demo Online
 
-**[Acesse o Dashboard Online](SEU_LINK_AQUI)** _(após deploy no Streamlit Cloud)_
+**[Acesse o Dashboard Online](https://am4x7zbjzohiputk6v5ddm.streamlit.app/)** - Analisador Universal de Dados CSV
 
 ## 📊 Sobre o Projeto
 
