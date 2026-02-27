@@ -1,0 +1,85 @@
+=============================================================================
+  🚀 GUIA RÁPIDO: PUBLICAR SEU DASHBOARD ONLINE
+=============================================================================
+
+📋 RESUMO:
+1. Criar repositório no GitHub (2 min)
+2. Fazer upload do código (1 min)
+3. Deploy no Streamlit Cloud (3-5 min)
+4. Seu dashboard estará ONLINE e GRATUITO! ✅
+
+=============================================================================
+
+OPÇÃO 1: USAR O SCRIPT AUTOMÁTICO (RECOMENDADO)
+=============================================================================
+
+Windows:
+  📌 Duplo clique em: publicar_github.bat
+  
+Bash/Linux:
+  📌 Execute: ./publicar_github.sh
+
+Siga as instruções na tela!
+
+=============================================================================
+
+OPÇÃO 2: MANUAL (passo a passo)
+=============================================================================
+
+▶️ ETAPA 1: CRIAR REPOSITÓRIO NO GITHUB
+   
+   1. Acesse: https://github.com/new
+   2. Nome: dashboard-analise-bancaria
+   3. Visibilidade: Public
+   4. Clique em "Create repository"
+
+
+▶️ ETAPA 2: ENVIAR CÓDIGO
+
+   No terminal:
+   
+   cd C:\Users\Windows\Desktop\testeSkill
+   
+   git remote add origin https://github.com/SEU_USUARIO/SEU_REPO.git
+   git push -u origin main
+
+
+▶️ ETAPA 3: DEPLOY NO STREAMLIT CLOUD
+
+   1. Acesse: https://share.streamlit.io
+   2. Login com GitHub
+   3. Clique "New app"
+   4. Selecione:
+      - Repository: SEU_USUARIO/dashboard-analise-bancaria
+      - Branch: main
+      - Main file: app_streamlit.py
+   5. Clique "Deploy!"
+
+
+▶️ ETAPA 4: AGUARDAR (2-5 minutos)
+
+   Quando terminar, você terá uma URL como:
+   https://SEU_USUARIO-dashboard-analise-bancaria.streamlit.app
+
+
+=============================================================================
+  ✅ PRONTO!
+=============================================================================
+
+Seu dashboard está online e pode ser acessado por qualquer pessoa!
+
+Compartilhe a URL com colegas, no LinkedIn, em apresentações, etc.
+
+Para atualizar o código no futuro:
+   git add .
+   git commit -m "Atualizações"
+   git push
+
+O Streamlit Cloud faz redeploy automático em minutos!
+
+=============================================================================
+
+📚 Guia completo: DEPLOY_GITHUB_STREAMLIT.md
+🆘 Problemas? Veja a seção "Troubleshooting" no guia completo
+
+=============================================================================
