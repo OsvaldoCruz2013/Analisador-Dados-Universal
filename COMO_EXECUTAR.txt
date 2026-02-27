@@ -1,0 +1,48 @@
+═══════════════════════════════════════════════════════════════════════
+  🚀 INÍCIO RÁPIDO - DASHBOARDS DE ANÁLISE DE DADOS
+═══════════════════════════════════════════════════════════════════════
+
+📊 DASHBOARD UNIVERSAL (Recomendado) - Analisa QUALQUER CSV
+───────────────────────────────────────────────────────────────────────
+   
+   Windows: Duplo clique em → run_universal.bat
+   Linux/Mac: Terminal → ./run_universal.sh
+   
+   Abre em: http://localhost:8502
+   
+   ✓ Faça upload de qualquer arquivo CSV
+   ✓ Análises automáticas instantâneas
+   ✓ Funciona com vendas, RH, financeiro, etc.
+
+
+🏦 DASHBOARD BANCÁRIO - Análise específica de dados bancários
+───────────────────────────────────────────────────────────────────────
+   
+   Windows: Duplo clique em → run_dashboard.bat
+   Linux/Mac: Terminal → ./run_dashboard.sh
+   
+   Abre em: http://localhost:8501
+   
+   ✓ Upload de CSV/Excel com dados bancários
+   ✓ Análises especializadas do setor
+
+
+═══════════════════════════════════════════════════════════════════════
+  🌐 PUBLICAR ONLINE (GRÁTIS)
+═══════════════════════════════════════════════════════════════════════
+
+1️⃣ GITHUB: Execute → publicar_github.bat (ou .sh)
+2️⃣ STREAMLIT CLOUD: Veja guia completo em DEPLOY_GITHUB_STREAMLIT.md
+
+
+═══════════════════════════════════════════════════════════════════════
+  📚 DOCUMENTAÇÃO COMPLETA
+═══════════════════════════════════════════════════════════════════════
+
+→ PROJETO_COMPLETO.txt - Guia completo de tudo
+→ README_UNIVERSAL.md - Detalhes do dashboard universal
+→ README.md - Documentação do projeto
+→ DEPLOY_GITHUB_STREAMLIT.md - Como publicar online
+
+
+═══════════════════════════════════════════════════════════════════════

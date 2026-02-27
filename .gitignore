@@ -61,6 +61,7 @@ Desktop.ini
 
 # Agent-specific (local only)
 .windsurf/
+.agents/
 
 # Cache
 .cache/

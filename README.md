@@ -1,12 +1,38 @@
-# Dashboard de Análise de Clientes Bancários 🏦
+# Dashboard de Análise de Dados 📊
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io)
 
-Dashboard interativo para análise exploratória de dados de clientes bancários, desenvolvido com Python, Pandas e Streamlit.
+Sistema completo de análise de dados desenvolvido com Python, Pandas e Streamlit. **Duas versões disponíveis**: análise bancária específica e analisador universal para qualquer CSV.
 
 ![Dashboard Preview](https://img.shields.io/badge/Python-3.14+-blue.svg)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.31.0-red.svg)
 ![Pandas](https://img.shields.io/badge/Pandas-2.2.0-green.svg)
+
+---
+
+## ⭐ ESCOLHA SUA VERSÃO
+
+### 🏦 Dashboard Bancário (Específico)
+
+- **Arquivo**: `app_streamlit.py`
+- **Uso**: Análise especializada de dados bancários
+- **Executar**: `run_dashboard.bat` (Windows) ou `run_dashboard.sh` (Linux/Mac)
+- Visualizações especializadas para dados bancários
+- Colunas pré-configuradas (CLIENTNUM, Categoria Cartão, etc.)
+
+### 📊 Dashboard Universal (Genérico) ⭐ NOVO!
+
+- **Arquivo**: `app_universal.py`
+- **Uso**: Analisa **QUALQUER** arquivo CSV automaticamente
+- **Executar**: `run_universal.bat` (Windows) ou `run_universal.sh` (Linux/Mac)
+- **Detecção automática** de tipos de dados (numérico, categórico, data, booleano)
+- **Filtros dinâmicos** baseados nos dados
+- **6 abas de análise**: Visão Geral, Numéricas, Categóricas, Cruzada, Temporal, Insights
+- Funciona com vendas, RH, financeiro, marketing, saúde, educação, etc.
+
+📖 **[Veja documentação completa do Dashboard Universal →](README_UNIVERSAL.md)**
+
+---
 
 ## 🚀 Demo Online
 
